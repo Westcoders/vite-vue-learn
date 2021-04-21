@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vite App</title>
+</head>
+<body>
+  <div id="app"></div>
+  <div id="components-demo"><button-counter></button-counter></div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
+    <!--<p>图片复选框</p>  
+    <script src="https://unpkg.com/vue@next"></script>
+    <input type="checkbox" v-html="ccc" id="one" class="" value="1" v-model="checkedNames">
+    <label for="one">选项一<img src="src/assets/123.png" alt="12312" width="200" height="200"  @click="counter1 += 1" /></label>
+    <input type="checkbox" id="two"  value="2" v-model="checkedNames">
+    <label for="two">选项二<img src="src/assets/123.png" alt="12312" width="200" height="200"/></label>
+    <input type="checkbox" id="three" value="3" v-model="checkedNames">
+    <label for="three">选项三<img src="src/assets/123.png" alt="12312" width="200" height="200"/></label>
+    <br>
+    <span>已选图片: {{ checkedNames }}</span>
+    <p>图片一选中监听 {{ counter1 }}</p>
+    <button  @click=" abc " >全选</button>
+    <p>全选按钮计数:{{ counter2 }}</p>      
+html相关学习记录
+一.模板
+----插值：文本、原始html、attribute、JavaScript；----
+1.文本：
+  <span>Message: {{ msg }}</span>，msg=文本内容，也可以是提前创建好的property（实时更新）的值；特别功能v-###等，格式<span v-###></span>；
+2.原始html中的纯文本与代码格式:
+  为纯文本:<p>Using mustaches: {{ rawHtml }}</p>，会忽略"rawHtml"中的代码部分；
+  为执行html代码:<p>Using v-html directive: <span v-html="rawHtml"></span></p>，v-html用于将html中的<span>替换为.js中"rawHtml"的<span>;
+  其中"rawHtml"在.js中定义组件并挂载得到，格式为: rawHtml: '<span style="color: red">This should be red.</span>' 此为html代码；
+  ???在你的站点上动态渲染任意的 HTML 是非常危险的，因为它很容易导致 XSS 攻击。请只对可信内容使用 HTML 插值，绝不要将用户提供的内容作为插值。???
+3.attribute：
+  css选择器功能，如:<div class = "###"></div>,在vue3.0中用'v-bind: class = "###"'代替，对于布尔类型有略微不同；
+4.JavaScript：
+  vue.js支持完全的JavaScript表达式，但有限值???只能绑定单个表达式???
+----指令: 参数、动态参数、修饰符；----
+1.参数:
+  用于v-###指令接收的参数，可以极大提高应用中Dom的交互性、实时性；
+  如：href、????
+2.动态参数：
+  参数可以以JavaScript表达式来构成动态参数，格式：
+  <a v-on:[eventName]="doSomething"> ... </a>
+  其中参数自定义
+3.修饰符：
+  结构：<form v-###:submit.####="onSubmit">...</form>，其中.###为修饰符，即令指令调用event.preventDefault()
+----缩写：v-bind、v-on；----
+1.bind：
+  完整语法 
+    <a v-bind:href="url"> ... </a>
+  缩写 
+    <a :href="url"> ... </a>
+  动态参数的缩写 
+    <a :[key]="url"> ... </a>
+2.on：
+  完整语法 
+    <a v-on:click="doSomething"> ... </a>
+  缩写 
+    <a @click="doSomething"> ... </a>
+  动态参数的缩写 (2.6.0+) 
+    <a @[event]="doSomething"> ... </a>
+3.注意：
+  动态参数值null;
+  某些字符，如空格和引号，放在 HTML attribute 名里是无效的;
+  在 DOM 中使用模板时还需要避免使用大写字符来命名键名，因为浏览器会把 attribute 名全部强制转为小写:
+    <a v-bind:[someAttr]="value"> ... </a>中someAttr最好都小写（）
+-->
